@@ -5,9 +5,8 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    // Set base path for GitHub Pages subpath deployment.
-    // If you are using a custom domain (e.g. hylestudios.com), change this to '/'
-    base: process.env.NODE_ENV === 'production' ? '/Hyle-studios-official-website-/' : '/',
+    // Use relative paths in production so it works on any GitHub Pages subpath automatically.
+    base: process.env.NODE_ENV === 'production' ? './' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
